@@ -1,0 +1,9 @@
+.sign-up-form{
+    display: none;
+    flex-direction: column;
+    width: 800px;
+    height: 350px;
+    position: absolute;
+    top: calc(100% / 2 - 175px);
+    left: calc(100% / 2 - 400px);
+}

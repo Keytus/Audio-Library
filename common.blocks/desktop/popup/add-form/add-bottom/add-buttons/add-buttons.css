@@ -1,0 +1,6 @@
+.add-buttons{
+    display: inherit;
+    flex-direction: row;
+    width: 600px;
+    height: 100px;
+}

@@ -1,0 +1,52 @@
+.button-container{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.button-container__auth-button{
+    display: none;
+}
+
+.button-container__auth-button_standard{
+    display: none;
+}
+
+.button-container__auth-button-mobile{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-image: url("../../../../static/Login&Sign\ up\ button.png");
+}
+
+.button-container__auth-button-mobile:hover{
+    background-image: url("../../../../static/Login&Sign\ up\ button-active.png");
+}
+
+.button-container__nav-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-image: url("../../../../static/Nav\ button.png");
+}
+
+.button-container__nav-button:hover
+{
+    background-image: url("../../../../static/Nav\ button-active.png");
+}

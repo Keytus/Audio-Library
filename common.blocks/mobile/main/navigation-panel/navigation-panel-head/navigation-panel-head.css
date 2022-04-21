@@ -1,0 +1,12 @@
+.navigation-panel-head{
+    display: none;
+}
+
+.navigation-panel-head__text{
+    margin-left: 10px;
+}
+
+.navigation-panel-head__text_font{
+    font-family: 'Roboto';
+    font-size: 24px;
+}

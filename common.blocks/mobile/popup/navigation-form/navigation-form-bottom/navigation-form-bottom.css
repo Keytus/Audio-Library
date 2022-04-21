@@ -1,0 +1,25 @@
+.navigation-form-genres{
+    display: inherit;
+    min-width: 235px;
+    min-height: 440px;
+    background-color: #C4C4C4;
+    list-style : inside;
+    margin: 0;
+    padding-left: 5px;
+    align-items: flex-end;
+}
+
+.navigation-form-genres__item{
+    margin-left: 5px;
+}
+
+.navigation-form-genres__item_font{
+    font-family: 'Roboto';
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.navigation-form-genres__item_font:hover{
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,7 @@
+.audio-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    align-content: flex-start;
+}

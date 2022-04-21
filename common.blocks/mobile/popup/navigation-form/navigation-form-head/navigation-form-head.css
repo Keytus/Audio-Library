@@ -1,0 +1,16 @@
+.navigation-form-head{
+    display: inherit;
+    align-items: center;
+    background-color: #A8A2A2;
+    min-width: 240px;
+    min-height: 60px;
+}
+
+.navigation-form-head__text{
+    margin-left: 10px;
+}
+
+.navigation-form-head__text_font{
+    font-family: 'Roboto';
+    font-size: 24px;
+}

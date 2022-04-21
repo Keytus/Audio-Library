@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #A2A2A2;
+    align-items: center;
+    width: 1440px;
+    height: calc(100% - 850px);
+}
+
+.footer__github-link
+{
+    margin-right: 20px;
+}
+
+.footer__github-link_font
+{
+    font-size: 18px;
+}
+
