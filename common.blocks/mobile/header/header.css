@@ -15,7 +15,7 @@
 }
 
 .header__websitename_font {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 28px;
     color: #ffffff;
 }

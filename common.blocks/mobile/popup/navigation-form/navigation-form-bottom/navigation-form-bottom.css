@@ -14,7 +14,7 @@
 }
 
 .navigation-form-genres__item_font{
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: rgb(0, 0, 0);
     text-decoration: none;

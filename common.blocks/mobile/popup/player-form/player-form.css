@@ -25,7 +25,7 @@
 
 
 .player-form__audio-name_font, .player-form__author-name_font{
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #000000;
 }

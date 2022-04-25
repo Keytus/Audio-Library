@@ -25,7 +25,7 @@
 }
 
 .audio-item__audio-name_font, .audio-item__author-name_font, .audio-item__username_font {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     color: rgb(201, 201, 201);
     text-align: center;

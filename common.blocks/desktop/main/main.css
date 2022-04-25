@@ -21,6 +21,7 @@
 @import url("../popup/add-form/add-bottom/add-buttons/load-image/load-image.css");
 @import url("../popup/player-form/player-form.css");
 @import url("../popup/navigation-form/navigation-form.css");
+@import url("../popup/login-sign-up-form/login-sign-up-form.css");
 
 .main {
     display: flex;
