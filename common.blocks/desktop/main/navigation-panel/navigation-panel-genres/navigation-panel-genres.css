@@ -1,5 +1,6 @@
 .navigation-panel-genres{
     min-width: 235px;
+    width: inherit;
     min-height: 740px;
     background-color: #C4C4C4;
     list-style : inside;

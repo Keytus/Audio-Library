@@ -3,7 +3,8 @@
     flex-direction: row-reverse;
     background-color: #A2A2A2;
     align-items: center;
-    width: 1440px;
+    min-width: 1440px;
+    min-height: 50px;
     height: calc(100% - 850px);
 }
 

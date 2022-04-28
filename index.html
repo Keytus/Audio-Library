@@ -9,26 +9,18 @@
     <meta charset="utf-8" content="width=device-width" name="viewport" >
 </head>
 <body>
-    <div id="page" style="height: inherit;" onclick="closeCurrentForm()">
+    <div id="page" class="page" onclick="closeCurrentForm()">
         <header class="header">
             <span class="header__websitename header__websitename_font">Audio-Library</span>
             <div class="button-container">
-                <form>
-                    <button type="button" class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('LoginForm')">
-                        Login
-                    </button>
-                </form>
-                <form>
-                    <button type="button" class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('SignUpForm')">
-                        Sign up
-                    </button>
-                </form>
-                <form>
-                    <button type="button" class="button-container__auth-button-mobile" onclick="openForm('LoginSignUpForm')">
-                </form>
-                <form>
-                    <button type="button" class="button-container__nav-button" onclick="openForm('NavForm')">
-                </form>
+                <button class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('LoginForm')">
+                    Login
+                </button>
+                <button class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('SignUpForm')">
+                    Sign up
+                </button>
+                <button class="button-container__auth-button-mobile" onclick="openForm('LoginSignUpForm')">
+                <button class="button-container__nav-button" onclick="openForm('NavForm')">
             </div>
         </header>
         <main class="main">
@@ -63,7 +55,7 @@
             </div>
             <div class="bookcase">
                 <div class="audio-items">
-                    <figure type="button" class="audio-item" onclick="openForm('PlayerForm')">
+                    <figure class="audio-item" onclick="openForm('PlayerForm')">
                         <span class="audio-item__audio-name audio-item__audio-name_font">Audio name</span>
                         <span class="audio-item__author-name audio-item__author-name_font">Author name</span>
                         <span class="audio-item__username audio-item__username_font">Username</span>
@@ -81,26 +73,26 @@
         </footer>
     </div>
 
-    <div class="login-form" id="LoginForm">
-        <div class="login-top">
-            <span class="login-top__websitename login-top__websitename_font">Audio-Library</span>
+    <div class="auth-form" id="LoginForm">
+        <div class="auth-top">
+            <span class="auth-top__websitename auth-top__websitename_font">Audio-Library</span>
         </div>
-        <form class="login-bottom">
-            <input type="text" placeholder="Enter Username" name="username" class="login-bottom__username-input" required>
-            <input type="password" placeholder="Enter Password" name="psw" class="login-bottom__password-input" required>
-            <button type="submit" class="login-bottom__continue-button login-bottom__continue-button_standard" onclick="closeFrom('LoginForm')">Continue</button>
+        <form class="auth-bottom">
+            <input type="text" placeholder="Enter Username" name="username" class="auth-bottom__username-input" required>
+            <input type="password" placeholder="Enter Password" name="pwd" class="auth-bottom__password-input" required>
+            <button type="submit" class="auth-bottom__continue-button auth-bottom__continue-button_standard" onclick="closeFrom('LoginForm')">Continue</button>
         </form>
     </div>
 
-    <div class="sign-up-form" id="SignUpForm">
-        <div class="sign-up-top">
-            <span class="sign-up-top__websitename sign-up-top__websitename_font">Audio-Library</span>
+    <div class="auth-form" id="SignUpForm">
+        <div class="auth-top">
+            <span class="auth-top__websitename auth-top__websitename_font">Audio-Library</span>
         </div>
-        <form class="sign-up-bottom">
-            <input type="text" placeholder="Enter Username" name="username" class="sign-up-bottom__username-input" required>
-            <input type="password" placeholder="Enter Password" name="psw1" class="sign-up-bottom__password-input" required>
-            <input type="password" placeholder="Repeat Password" name="psw2" class="sign-up-bottom__password-repeat-input" required>
-            <button type="submit" class="sign-up-bottom__continue-button sign-up-bottom__continue-button_standard" onclick="closeFrom('SignUpForm')">Continue</button>
+        <form class="auth-bottom">
+            <input type="text" placeholder="Enter Username" name="username" class="auth-bottom__username-input" required>
+            <input type="password" placeholder="Enter Password" name="pwd1" class="auth-bottom__password-input" required>
+            <input type="password" placeholder="Repeat Password" name="pwd2" class="auth-bottom__password-input" required>
+            <button type="submit" class="auth-bottom__continue-button auth-bottom__continue-button_standard" onclick="closeFrom('SignUpForm')">Continue</button>
         </form>
     </div>
 
@@ -164,24 +156,20 @@
     </div>
 
     <div class="login-sign-up-form" id="LoginSignUpForm">
-        <form>
-            <button type="button" class="login-sign-up-form__auth-button login-sign-up-form__auth-button_standard" onclick="openForm('LoginForm')">
-                Login
-            </button>
-        </form>
-        <form>
-            <button type="button" class="login-sign-up-form__auth-button login-sign-up-form__auth-button_standard" onclick="openForm('SignUpForm')">
-                Sign up
-            </button>
-        </form>
+        <button type="button" class="login-sign-up-form__auth-button login-sign-up-form__auth-button_standard" onclick="openForm('LoginForm')">
+            Login
+        </button>
+        <button type="button" class="login-sign-up-form__auth-button login-sign-up-form__auth-button_standard" onclick="openForm('SignUpForm')">
+            Sign up
+        </button>
     </div>
     
 
     <script>
         {
-            var currentForm=null;
-            var isOpen = false;
-            var canClose = false;
+            currentForm=null;
+            isOpen = false;
+            canClose = false;
         }
         function openForm(formName) {
             closeCurrentForm()

@@ -3,9 +3,9 @@
     flex-direction: row-reverse;
     background-color: #A2A2A2;
     min-height: 50px;
-    align-items: center;
-    width: 360px;
+    min-width: 360px;
     height: calc(100% - 750px);
+    align-items: center;
 }
 
 .footer__github-link

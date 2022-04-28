@@ -1,16 +1,15 @@
 .header {
     background-color: #6D6D6D;
     min-height: 50px;
+    min-width: 100%;
     display: flex;
     align-content: space-between;
     justify-content: space-between;
-    width: 1440px;
+    min-width: 1440px;
 }
 
 .header__websitename {
     margin-left: 10px;
-    width: 210;
-    height: 40;
 }
 
 .header__websitename_font {

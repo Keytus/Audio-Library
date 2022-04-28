@@ -7,12 +7,6 @@
 @import url("../main/bookcase/bookcase.css");
 @import url("../main/bookcase/audio-items/audio-item/audio-item.css");
 @import url("../main/bookcase/audio-items/audio-items.css");
-@import url("../popup/login-form/login-form.css");
-@import url("../popup/login-form/login-top/login-top.css");
-@import url("../popup/login-form/login-bottom/login-bottom.css");
-@import url("../popup/sign-up-form/sign-up-form.css");
-@import url("../popup/sign-up-form/sign-up-top/sign-up-top.css");
-@import url("../popup/sign-up-form/sign-up-bottom/sign-up-bottom.css");
 @import url("../popup/add-form/add-form.css");
 @import url("../popup/add-form/add-top/add-top.css");
 @import url("../popup/add-form/add-bottom/add-bottom.css");
@@ -24,6 +18,9 @@
 @import url("../popup/navigation-form/navigation-form-head/navigation-form-head.css");
 @import url("../popup/navigation-form/navigation-form-bottom/navigation-form-bottom.css");
 @import url("../popup/login-sign-up-form/login-sign-up-form.css");
+@import url("../popup/auth-form/auth-form.css");
+@import url("../popup/auth-form/auth-bottom/auth-bottom.css");
+@import url("../popup/auth-form/auth-top/auth-top.css");
 
 .main {
     display: flex;

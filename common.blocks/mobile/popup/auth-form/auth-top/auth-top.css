@@ -1,17 +1,17 @@
-.add-top{
+.auth-top{
     display: inherit;
-    height: 70px;
+    height: 100px;
     width: 300px;
     background-color: #9D9D9D;
     align-items: center;
 }
 
-.add-top__websitename {
-    margin-left: 10px;
+.auth-top__websitename {
+    margin-left: 20px;
 }
 
-.add-top__websitename_font {
+.auth-top__websitename_font {
     font-family: 'Roboto', sans-serif;
-    font-size: 28px;
+    font-size: 36px;
     color: #ffffff;
 }
