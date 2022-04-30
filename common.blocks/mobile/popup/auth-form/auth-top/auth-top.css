@@ -1,0 +1,17 @@
+.auth-top{
+    display: inherit;
+    height: 100px;
+    width: 300px;
+    background-color: #9D9D9D;
+    align-items: center;
+}
+
+.auth-top__websitename {
+    margin-left: 20px;
+}
+
+.auth-top__websitename_font {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: #ffffff;
+}

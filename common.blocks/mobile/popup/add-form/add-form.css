@@ -1,0 +1,9 @@
+.add-form{
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    top: calc(100% / 2 - 200px);
+    left: calc(100% / 2 - 150px);
+}

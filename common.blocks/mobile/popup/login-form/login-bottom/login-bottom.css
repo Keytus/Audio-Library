@@ -1,0 +1,43 @@
+.login-bottom{
+    display: inherit;
+    flex-direction: column;
+    height: 250px;
+    min-height: 250px;
+    width: 300px;
+    background-color: #828282;
+    align-items: center;
+}
+
+.login-bottom__username-input{
+    height: 30px;
+    width: 200px;
+    border-width: 0;
+    padding: 0%;
+    margin-top: 60px;
+}
+
+.login-bottom__password-input{
+    height: 30px;
+    width: 200px;
+    border-width: 0;
+    padding: 0%;
+    margin-top: 20px;
+}
+
+.login-bottom__continue-button{
+    margin-top: 30px;
+}
+
+.login-bottom__continue-button_standard{
+    background-color: #C4C4C4;
+    border: none;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 15px;
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+}

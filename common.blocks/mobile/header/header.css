@@ -1,0 +1,21 @@
+.header {
+    background-color: #6D6D6D;
+    min-width: 360px;
+    min-height: 50px;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.header__websitename {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 210;
+    height: 40;
+}
+
+.header__websitename_font {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+}

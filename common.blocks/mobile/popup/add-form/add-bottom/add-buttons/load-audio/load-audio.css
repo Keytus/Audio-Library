@@ -1,0 +1,33 @@
+.load-audio{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    height: 100px;
+    width: 50%;
+}
+
+.load-audio__label{
+    padding-top: 15px;
+    margin: 5px;
+}
+
+.load-audio__label_font{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+
+.load-audio__button{
+    width: 50px;
+    height: 50px;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-image: url(../../../../../../../static/Load\ .mp3\ button.png);
+}

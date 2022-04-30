@@ -1,0 +1,9 @@
+.navigation-form{
+    display: none;
+    flex-direction: column;
+    width: 240px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

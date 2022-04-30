@@ -1,0 +1,53 @@
+.audio-item{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    max-width: 100px;
+    height: 150px;
+    max-height: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 65px;
+    margin-right: 65px;
+    margin-top: 35px;
+}
+
+.audio-item:hover{
+    transform: scale(1.5);
+}
+
+.audio-item__audio-name, .audio-item__author-name, .audio-item__username{
+    width: 90px;
+    max-width: 90px;
+    height: 10px;
+    max-height: 10px;
+    margin-bottom: 5px;
+}
+
+.audio-item__audio-name_font, .audio-item__author-name_font, .audio-item__username_font {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: rgb(201, 201, 201);
+    text-align: center;
+}
+
+.audio-item__image{
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    max-height: 100px;
+}
+
+.audio-item__add-button{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-image: url(../../../../../../static/Add\ button.png);
+}

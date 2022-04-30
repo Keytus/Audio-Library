@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #A2A2A2;
+    align-items: center;
+    min-width: 1440px;
+    min-height: 50px;
+    height: calc(100% - 850px);
+}
+
+.footer__github-link
+{
+    margin-right: 20px;
+}
+
+.footer__github-link_font
+{
+    font-size: 18px;
+}
+

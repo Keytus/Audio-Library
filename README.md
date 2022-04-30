@@ -6,6 +6,8 @@ Music Player: веб-приложения для прослушивания му
 
 Figma:https://www.figma.com/file/ZGsRNXlgnMl3n4wElCcoKu/Lab2?node-id=0%3A1
 
+Github-pages:https://keytus.github.io/Audio-Library/
+
 # Базовый функционал:
 
 - авторизация пользователя;
