@@ -1,0 +1,9 @@
+.navigation-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 240px;
+    width: calc(100% - 1200px);
+    max-height: 100%;
+}
+

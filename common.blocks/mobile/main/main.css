@@ -1,0 +1,28 @@
+@import url("../header/header.css");
+@import url("../header/button-container/button-container.css");
+@import url("../footer/footer.css");
+@import url("../main/navigation-panel/navigation-panel.css");
+@import url("../main/navigation-panel/navigation-panel-genres/navigation-panel-genres.css");
+@import url("../main/navigation-panel/navigation-panel-head/navigation-panel-head.css");
+@import url("../main/bookcase/bookcase.css");
+@import url("../main/bookcase/audio-items/audio-item/audio-item.css");
+@import url("../main/bookcase/audio-items/audio-items.css");
+@import url("../popup/add-form/add-form.css");
+@import url("../popup/add-form/add-top/add-top.css");
+@import url("../popup/add-form/add-bottom/add-bottom.css");
+@import url("../popup/add-form/add-bottom/add-buttons/add-buttons.css");
+@import url("../popup/add-form/add-bottom/add-buttons/load-audio/load-audio.css");
+@import url("../popup/add-form/add-bottom/add-buttons/load-image/load-image.css");
+@import url("../popup/player-form/player-form.css");
+@import url("../popup/player-form/slider-container/slider-container.css");
+@import url("../popup/navigation-form/navigation-form.css");
+@import url("../popup/navigation-form/navigation-form-head/navigation-form-head.css");
+@import url("../popup/navigation-form/navigation-form-bottom/navigation-form-bottom.css");
+@import url("../popup/login-sign-up-form/login-sign-up-form.css");
+@import url("../popup/auth-form/auth-form.css");
+@import url("../popup/auth-form/auth-bottom/auth-bottom.css");
+@import url("../popup/auth-form/auth-top/auth-top.css");
+
+.main {
+    display: flex;
+}

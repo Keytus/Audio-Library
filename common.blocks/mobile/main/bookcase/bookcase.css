@@ -1,0 +1,8 @@
+.bookcase{
+    display: flex;
+    background-image: url("../../../../static/Bookcase-mobile.png");
+    width: 360px;
+    height: 700px;
+    flex-basis: 360px;
+    flex-shrink: 0;
+}
