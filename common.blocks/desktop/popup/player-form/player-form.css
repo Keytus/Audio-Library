@@ -1,19 +1,19 @@
 .player-form{
     display: none;
     flex-direction: column;
-    width: 600px;
-    height: 500px;
+    width: 240px;
+    height: 400px;
     position: absolute;
-    top: calc(100% / 2 - 250px);
-    left: calc(100% / 2 - 300px);
+    top: calc(100% / 2 - 200px);
+    left: calc(100% / 2 - 120px);
     background-color: #C4C4C4;
     align-items: center;
 }
 
 
 .player-form__image{
-    width: 260px;
-    height: 260px;
+    width: 160px;
+    height: 160px;
     padding-top: 20px;
 }
 
@@ -28,33 +28,6 @@
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #000000;
-}
-
-.player-form__slider{
-    width: 300px;
-    height: 1px;
-    margin-top: 20px;
-    border-radius: 5px;  
-    background: #000000;
-}
-
-
-.player-form__slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; 
-    background: #000000;
-    cursor: pointer;
-  }
-  
-.player-form__slider::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #000000;
-    cursor: pointer;
 }
 
 .player-form__play-button{

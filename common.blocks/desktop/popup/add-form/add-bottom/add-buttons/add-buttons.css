@@ -4,3 +4,7 @@
     width: 600px;
     height: 100px;
 }
+
+input[type="file"] {
+    display: none;
+}

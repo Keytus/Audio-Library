@@ -28,8 +28,22 @@
     background-image: url("../../../../static/Login&Sign\ up\ button.png");
 }
 
-.button-container__auth-button-mobile:hover{
-    background-image: url("../../../../static/Login&Sign\ up\ button-active.png");
+.button-container__logout-button-mobile{
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-image: url("../../../../static/Logout\ button.png");
+}
+
+.button-container__logout-button-mobile:hover{
+    background-image: url("../../../../static/Logout\ button-active.png");
 }
 
 .button-container__nav-button{
