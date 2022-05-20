@@ -1,19 +1,19 @@
 .player-form{
     display: none;
     flex-direction: column;
-    width: 240px;
-    height: 400px;
+    width: 600px;
+    height: 500px;
     position: absolute;
-    top: calc(100% / 2 - 200px);
-    left: calc(100% / 2 - 120px);
+    top: calc(100% / 2 - 250px);
+    left: calc(100% / 2 - 300px);
     background-color: #C4C4C4;
     align-items: center;
 }
 
 
 .player-form__image{
-    width: 160px;
-    height: 160px;
+    width: 260px;
+    height: 260px;
     padding-top: 20px;
 }
 
