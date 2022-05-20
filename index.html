@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="common.blocks/mobile/main/main.css" media="screen and (max-width: 360px)">
     <link rel="stylesheet" href="common.blocks/fix-screen/fix-screen.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8" content="width=device-width" name="viewport" >
 </head>
 <body>
@@ -13,13 +14,17 @@
         <header class="header">
             <span class="header__websitename header__websitename_font">Audio-Library</span>
             <div class="button-container">
-                <button class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('LoginForm')">
+                <button id="btnLoginForm" class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('LoginForm')">
                     Login
                 </button>
-                <button class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('SignUpForm')">
+                <button id="btnSignupForm" class="button-container__auth-button button-container__auth-button_standard" onclick="openForm('SignUpForm')">
                     Sign up
                 </button>
-                <button class="button-container__auth-button-mobile" onclick="openForm('LoginSignUpForm')">
+                <button id="btnLogout" class="button-container__auth-button button-container__auth-button_standard">
+                    Log out
+                </button>
+                <button id="btnAuthMobile" class="button-container__auth-button-mobile" onclick="openForm('LoginSignUpForm')">
+                <button id="btnLogoutMobile" class="button-container__logout-button-mobile">
                 <button class="button-container__nav-button" onclick="openForm('NavForm')">
             </div>
         </header>
@@ -31,40 +36,12 @@
                     </span>
                 </div>
                 <nav>
-                    <ul class="navigation-panel-genres">
-                        <li>
-                            <a class="navigation-panel-genres__item navigation-panel-genres__item_font" href="#">Genre 1</a>
-                        </li>
-                        <li>
-                            <a class="navigation-panel-genres__item navigation-panel-genres__item_font" href="#">Genre 2</a>
-                        </li>
-                        <li>
-                            <a class="navigation-panel-genres__item navigation-panel-genres__item_font" href="#">Genre 3</a>
-                        </li>
-                        <li>
-                            <a class="navigation-panel-genres__item navigation-panel-genres__item_font" href="#">Genre 4</a>
-                        </li>
-                        <li>
-                            <a class="navigation-panel-genres__item navigation-panel-genres__item_font" href="#">Genre 5</a>
-                        </li>
-                        <li>
-                            <a class="navigation-panel-genres__item navigation-panel-genres__item_font" href="#">Genre 6</a>
-                        </li>
-                    </ul>
+                    <ul id="navPanel" class="navigation-panel-genres"></ul>
                 </nav>
             </div>
             <div class="bookcase">
-                <div class="audio-items">
-                    <figure class="audio-item" onclick="openForm('PlayerForm')">
-                        <span class="audio-item__audio-name audio-item__audio-name_font">Audio name</span>
-                        <span class="audio-item__author-name audio-item__author-name_font">Author name</span>
-                        <span class="audio-item__username audio-item__username_font">Username</span>
-                        <img class="audio-item__image" src="static/Audio image.png" alt="Audio image">
-                    </figure>
+                <div id="audioItems" class="audio-items">
                     
-                    <form class="audio-item">
-                        <button type="button" class="audio-item__add-button" onclick="openForm('AddForm')">
-                    </form>
                 </div>
             </div>
         </main>
@@ -77,52 +54,67 @@
         <div class="auth-top">
             <span class="auth-top__websitename auth-top__websitename_font">Audio-Library</span>
         </div>
-        <form class="auth-bottom">
-            <input type="text" placeholder="Enter Username" name="username" class="auth-bottom__username-input" required>
-            <input type="password" placeholder="Enter Password" name="pwd" class="auth-bottom__password-input" required>
-            <button type="submit" class="auth-bottom__continue-button auth-bottom__continue-button_standard" onclick="closeFrom('LoginForm')">Continue</button>
-        </form>
+        <div class="auth-bottom">
+            <input id="loginUsername" type="text" placeholder="Enter Username" name="username" class="auth-bottom__username-input" required>
+            <input id="loginPassword" type="password" placeholder="Enter Password" name="pwd" class="auth-bottom__password-input" required>
+            <button id="btnLogin" class="auth-bottom__continue-button auth-bottom__continue-button_standard" onclick="closeFrom('LoginForm')">Continue</button>
+        </div>
     </div>
 
     <div class="auth-form" id="SignUpForm">
         <div class="auth-top">
             <span class="auth-top__websitename auth-top__websitename_font">Audio-Library</span>
         </div>
-        <form class="auth-bottom">
-            <input type="text" placeholder="Enter Username" name="username" class="auth-bottom__username-input" required>
-            <input type="password" placeholder="Enter Password" name="pwd1" class="auth-bottom__password-input" required>
-            <input type="password" placeholder="Repeat Password" name="pwd2" class="auth-bottom__password-input" required>
-            <button type="submit" class="auth-bottom__continue-button auth-bottom__continue-button_standard" onclick="closeFrom('SignUpForm')">Continue</button>
-        </form>
+        <div class="auth-bottom">
+            <input id="sigupUsername" type="text" placeholder="Enter Username" name="username" class="auth-bottom__username-input" required>
+            <input id="sigupPassword" type="password" placeholder="Enter Password" name="pwd1" class="auth-bottom__password-input" required>
+            <input id="sigupPasswordRepeat" type="password" placeholder="Repeat Password" name="pwd2" class="auth-bottom__password-input" required>
+            <button id="btnSignup" class="auth-bottom__continue-button auth-bottom__continue-button_standard" onclick="closeFrom('SignUpForm')">Continue</button>
+        </div>
     </div>
 
     <div class="add-form" id="AddForm">
         <div class="add-top">
             <span class="add-top__websitename add-top__websitename_font">Audio-Library</span>
         </div>
-        <form class="add-bottom">
-            <input type="text" placeholder="Audio name" name="audio-name" class="add-bottom__audio-name-input" required>
-            <input type="password" placeholder="Author name" name="author" class="add-bottom__author-name-input" required>
+        <div class="add-bottom">
+            <input id="audioNameInput" type="text" placeholder="Audio name" name="audio-name" class="add-bottom__audio-name-input" required>
+            <input id="authorNameInput" type="text" placeholder="Author name" name="author" class="add-bottom__author-name-input" required>
             <div class="add-buttons">
                 <div class="load-audio">
-                    <span class="load-audio__label load-audio__label_font">Load .mp3</span>
-                    <button type="button" class="load-audio__button"></button>
+                    <span class="load-audio__label load-audio__label_font">Load image</span>
+                    <label>
+                        <img class="load-audio__button">
+                        <input id="imageInput" type="file" accept=".jpg, .jpeg, .png"></input>
+                    </label>
                 </div>
                 <div class="load-image">
                     <span class="load-image__label load-image__label_font">Load .mp3</span>
-                    <button type="button" class="load-image__button"></button>
+                    <label>
+                        <img class="load-image__button">
+                        <input id="audioInput" type="file" accept=".mp3"></input>
+                    </label>
                 </div>
             </div>
-            <button type="submit" class="add-bottom__continue-button add-bottom__continue-button_standard" onclick="closeFrom('AddForm')">Continue</button>
-        </form>
+            <button id="btnAddTrack" class="add-bottom__continue-button add-bottom__continue-button_standard" onclick="closeFrom('AddForm')">Continue</button>
+        </div>
     </div>
 
-    <div class="player-form" id="PlayerForm">
-        <img class="player-form__image" src="static/Audio image-full.png" alt="Audio image">
-        <span class="player-form__audio-name player-form__audio-name_font">Audio name</span>
-        <span class="player-form__author-name player-form__author-name_font">Author name</span>
-        <input type="range" class="player-form__slider" min="1" max="100" value="50" id="myRange">
-        <button class="add-bottom__continue-button player-form__play-button_standard" id="PlayerBtn" value=true onclick="changeState()">
+    <div class="player-form" id="playerForm">
+        <img class="player-form__image" id="playerImage">
+        <span class="player-form__audio-name player-form__audio-name_font" id="playerAudioName">Audio name</span>
+        <span class="player-form__author-name player-form__author-name_font" id="playerAuthorName">Author name</span>
+        <button class="player-form__play-button player-form__play-button_standard" id="btnPlay"></button>
+        <div class="slider-container">
+            <div id="currentTime" class="slider-container__current-time">00:00</div>
+            <input id="seekSlider" type="range" min="1" max="100" value="0" class="slider-container__seek-slider">
+            <div id="totalTime" class="slider-container__total-duration">00:00</div>
+        </div>
+        <div class="slider-container">
+            <i class="fa fa-volume-down"></i>
+            <input id="volumeSlider" type="range" min="1" max="100" value="10" class="slider-container__volume-slider"">
+            <i class="fa fa-volume-up"> </i>
+        </div>
     </div>
 
     <div class="navigation-form" id="NavForm">
@@ -132,26 +124,7 @@
             </span>
         </div>
         <nav>
-            <ul class="navigation-form-genres">
-                <li>
-                    <a class="navigation-form-genres__item navigation-form-genres__item_font" href="#">Genre 1</a>
-                </li>
-                <li>
-                    <a class="navigation-form-genres__item navigation-form-genres__item_font" href="#">Genre 2</a>
-                </li>
-                <li>
-                    <a class="navigation-form-genres__item navigation-form-genres__item_font" href="#">Genre 3</a>
-                </li>
-                <li>
-                    <a class="navigation-form-genres__item navigation-form-genres__item_font" href="#">Genre 4</a>
-                </li>
-                <li>
-                    <a class="navigation-form-genres__item navigation-form-genres__item_font" href="#">Genre 5</a>
-                </li>
-                <li>
-                    <a class="navigation-form-genres__item navigation-form-genres__item_font" href="#">Genre 6</a>
-                </li>
-            </ul>
+            <ul id="navPanelForm" class="navigation-form-genres"></ul>
         </nav>
     </div>
 
@@ -163,52 +136,16 @@
             Sign up
         </button>
     </div>
-    
 
-    <script>
-        {
-            currentForm=null;
-            isOpen = false;
-            canClose = false;
-        }
-        function openForm(formName) {
-            closeCurrentForm()
-            document.getElementById(formName).style.display = "flex";
-            currentForm = formName;
-            isOpen = true;
-        }
-        function closeFrom(formName) {
-            document.getElementById(formName).style.display = "none";
-            currentForm = null;
-            isOpen = false
-            canClose = false
-        } 
-        function changeState(){
-            if (document.getElementById("PlayerBtn").value === "true"){
-                document.getElementById("PlayerBtn").style.backgroundImage = "url(static/stop.png)";
-                document.getElementById("PlayerBtn").value = false;
-            }
-            else {
-                document.getElementById("PlayerBtn").style.backgroundImage = "url(static/play.png)";
-                document.getElementById("PlayerBtn").value = true;
-            } 
-        }
-        function closeCurrentForm()
-        {
-            if (isOpen)
-            {
-                if(canClose)
-                {
-                    document.getElementById(currentForm).style.display = "none";
-                    isOpen = false;
-                    canClose =false;
-                }
-                else
-                {
-                    canClose = true;
-                }
-            }
-        }
-    </script>
+    <script type="module" src="src/fb-initial.js"></script>
+    <script type="module" src="src/ui.js"></script>
+    <script type="module" src="src/storage.js"></script>
+    <script src="src/forms.js"></script>
+    <script type="module" src="src/screen.js"></script>
+    <script type="module" src="src/play.js"></script>
+    <script type="module" src="src/auth.js"></script>
+    <script type="module" src="src/db.js"></script>
+    <script type="module" src="src/fill-bookcase.js"></script>
+    <script type="module" src="src/add-track.js"></script>
 </body>
 </html>

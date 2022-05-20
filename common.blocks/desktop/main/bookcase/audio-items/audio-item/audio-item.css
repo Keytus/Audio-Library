@@ -17,16 +17,14 @@
 }
 
 .audio-item__audio-name, .audio-item__author-name, .audio-item__username{
-    width: 90px;
-    max-width: 90px;
-    height: 10px;
-    max-height: 10px;
-    margin-bottom: 5px;
+    width: 100px;
+    height: 15px;
+    max-height: 15px;
 }
 
 .audio-item__audio-name_font, .audio-item__author-name_font, .audio-item__username_font {
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     color: rgb(201, 201, 201);
     text-align: center;
 }
@@ -50,4 +48,8 @@
 	cursor: pointer;
 	outline: inherit;
     background-image: url(../../../../../../static/Add\ button.png);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 32072fe261a14d663e4c8451306050167180368f

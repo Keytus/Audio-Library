@@ -30,33 +30,6 @@
     color: #000000;
 }
 
-.player-form__slider{
-    width: 300px;
-    height: 1px;
-    margin-top: 20px;
-    border-radius: 5px;  
-    background: #000000;
-}
-
-
-.player-form__slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%; 
-    background: #000000;
-    cursor: pointer;
-  }
-  
-.player-form__slider::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #000000;
-    cursor: pointer;
-}
-
 .player-form__play-button{
     width: 45px;
     height: 38px;
