@@ -16,7 +16,8 @@ import {
 import {
     db,
     genresQuery,
-    updateTracksQuery
+    updateTracksQuery,
+    updateGenresQuery
 } from './db.js'
 
 import {
@@ -27,14 +28,18 @@ import {
     addAudioItem,
     appendAddTrack,
     removeAddTrack,
-    currentGenre
+    currentGenre,
+    resizeBookcase
 } from './fill-bookcase.js'
 
 import {
     storage
 } from './storage.js'
 
-import {ref, uploadBytes } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
+import {
+    ref, 
+    uploadBytes 
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
 function validImageFileType(file) {
     let validImageTypes = [
@@ -50,36 +55,42 @@ function validImageFileType(file) {
     return false;
 }
 
-async function addTrack() {
+function validTrackForm(){
+    if (imageInput.files.length === 0) {
+        alert("No image selected");
+        return false;
+    }
+    if (audioInput.files.length === 0) {
+        alert("No audio selected");
+        return false;
+    }
+    if (!validImageFileType(imageInput.files[0])) {
+        alert("Invalid image");
+        return false;
+    }
+    if (audioInput.files[0].type != 'audio/mpeg') {
+        alert("Invalid audio");
+        return false;
+    }
+    if (audioNameInput.value.length === 0) {
+        alert("Empty audio name");
+        return false;
+    }
+    if (authorNameInput.value.length === 0) {
+        alert("Empty author");
+        return false;
+    }
+    return true
+}
 
+async function addTrack(){
     try {
-        if (imageInput.files.length == 0) {
-            alert("No image selected")
-            return
-        }
-        if (audioInput.files.length == 0) {
-            alert("No audio selected")
-            return
-        }
-        if (!validImageFileType(imageInput.files[0])) {
-            alert("Invalid image")
-            return
-        }
-        if (audioInput.files[0].type != 'audio/mpeg') {
-            alert("Invalid audio")
-            return
-        }
-        if (audioNameInput.value.length == 0) {
-            alert("Empty audio name")
-            return
-        }
-        if (authorNameInput.value.length == 0) {
-            alert("Empty author")
-            return
+        if (!validTrackForm()){
+            return;
         }
     }
     catch (error) {
-        console.log(error)
+        console.log(error);
     }
 
     let storageRef = ref(storage, "audio/"+audioInput.files[0].name);
@@ -104,26 +115,32 @@ async function addTrack() {
         });
         console.log("Document written with ID: ", docRef.id);
 
-        genresQuery.forEach((doc) => {
+        genresQuery.forEach(async (doc) => {
             if (doc.data().genreName === currentGenre) {
-                updateDoc(doc.ref, { count: doc.data().count += 1 })
+                updateDoc(doc.ref, { count: doc.data().count += 1 });
+                resizeBookcase(doc.data().count);
             }
         });
+        await updateGenresQuery();
 
-        removeAddTrack()
+        removeAddTrack();
         let tracks = await getDocs(collection(db, "Tracks"));
-        tracks.forEach((doc) => {
-            if (doc.data().audioName === audioNameInput.value) {
-                addAudioItem(doc)
-                updateTracksQuery()
+        for (let i in tracks.docs){
+            let doc = tracks.docs[i];
+            if (doc.data().audioName === audioNameInput.value 
+            && doc.data().authorName === authorNameInput.value 
+            && doc.data().username === auth.currentUser.email) {
+                addAudioItem(doc);
+                updateTracksQuery();
+                appendAddTrack();
+                break;
             }
-        });
-        appendAddTrack()
+        }
+        
     }
     catch (error) {
         console.error("Error adding document: ", error);
     }
 }
 
-
-btnAddTrack.addEventListener("click", addTrack)
+btnAddTrack.addEventListener("click", addTrack);

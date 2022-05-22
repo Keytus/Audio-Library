@@ -1,5 +1,9 @@
 .navigation-panel-head{
-    display: none;
+    display: inherit;
+    align-items: center;
+    background-color: #A8A2A2;
+    min-width: 240px;
+    min-height: 60px;
 }
 
 .navigation-panel-head__text{

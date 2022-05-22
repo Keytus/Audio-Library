@@ -24,6 +24,15 @@
     margin-top: 20px;
 }
 
+.auth-bottom__exception{
+    display: none;
+    height: 30px;
+    width: 200px;
+    border-width: 0;
+    padding: 0%;
+    margin-top: 20px;
+}
+
 .auth-bottom__continue-button{
     margin-top: 30px;
 }

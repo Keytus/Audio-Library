@@ -7,28 +7,61 @@ import {
     seekSlider,
     volumeSlider,
     currentTime,
-    totalTime
+    totalTime,
+    btnDownload
 } from './ui.js'
 
 import {
     storage
 } from './storage.js'
 
-import { ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
+import {
+    openForm
+} from './forms.js'
+
+import {
+    auth
+} from './auth.js'
+
+import {
+    ref,
+    getDownloadURL
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
 let isPlaying = false;
 let updateTimer;
 let closeInterval;
 
 let currentTrack = document.createElement('audio');
+let trackName = null;
+let trackURL = null;
 
-seekSlider.addEventListener("change", seekTo)
-volumeSlider.addEventListener("change", setVolume)
+seekSlider.addEventListener("change", seekTo);
+volumeSlider.addEventListener("change", setVolume);
+
+
+function download(filename, downloadURL) {
+    let element = document.createElement('a');
+    element.setAttribute('href', downloadURL);
+    element.setAttribute('download', filename);
+    element.setAttribute('target', "_blank");
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
 
 
 export function startPlayer(trackDoc) {
     clearInterval(updateTimer);
     resetValues()
+
+    if (auth.currentUser === null) {
+        btnDownload.style.display = "none";
+    }
+    else {
+        btnDownload.style.display = "inherit";
+    }
 
     playerImage.alt = trackDoc.data().audioName
     let spaceRef = ref(storage, trackDoc.data().imagePath);
@@ -36,17 +69,19 @@ export function startPlayer(trackDoc) {
         playerImage.src = downloadURL;
     })
 
-    playerAudioName.textContent = trackDoc.data().audioName
+    playerAudioName.textContent = trackDoc.data().audioName;
 
-    playerAuthorName.textContent = trackDoc.data().authorName
+    playerAuthorName.textContent = trackDoc.data().authorName;
 
     spaceRef = ref(storage, trackDoc.data().audioPath);
     getDownloadURL(spaceRef).then(downloadURL => {
+        trackName = trackDoc.data().audioName;
+        trackURL = downloadURL;
         currentTrack.src = downloadURL;
     })
 
-    currentTrack.load()
-    setVolume()
+    currentTrack.load();
+    setVolume();
 
     updateTimer = setInterval(seekUpdate, 1000);
     closeInterval = setInterval((() => {
@@ -56,7 +91,7 @@ export function startPlayer(trackDoc) {
         }
     }), 500);
 
-    openForm('playerForm')
+    openForm('playerForm');
 }
 
 function playPauseTrack() {
@@ -83,7 +118,7 @@ function resetValues() {
 }
 
 function seekTo() {
-    currentTrack.currentTime = currentTrack.duration * (seekSlider.value / 100)
+    currentTrack.currentTime = currentTrack.duration * (seekSlider.value / 100);
 }
 
 function setVolume() {
@@ -113,5 +148,7 @@ function seekUpdate() {
     }
 }
 
-
+btnDownload.addEventListener("click", function () {
+    download(trackName, trackURL);
+});
 btnPlay.addEventListener("click", playPauseTrack)

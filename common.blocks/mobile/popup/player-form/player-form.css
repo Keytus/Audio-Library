@@ -2,7 +2,7 @@
     display: none;
     flex-direction: column;
     width: 240px;
-    height: 400px;
+    height: 450px;
     position: absolute;
     top: calc(100% / 2 - 200px);
     left: calc(100% / 2 - 120px);
@@ -32,12 +32,10 @@
 
 .player-form__play-button{
     width: 45px;
-    height: 38px;
+    height: 40px;
 }
   
 .player-form__play-button_standard{
-    width: 48px;
-    height: 35px;
     background: none;
 	color: inherit;
 	border: none;
@@ -46,4 +44,21 @@
 	cursor: pointer;
 	outline: inherit;
     background-image: url(../../../../static/play.png);
+}
+
+.player-form__dowload-button{
+    width: 48px;
+    height: 48px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.player-form__dowload-button_standard{
+    background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+    background-size: 45px, 35px;
+    background-image: url(../../../../static/Dowload\ button.png);
 }
