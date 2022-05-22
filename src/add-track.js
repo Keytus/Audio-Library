@@ -136,7 +136,6 @@ async function addTrack(){
                 break;
             }
         }
-        
     }
     catch (error) {
         console.error("Error adding document: ", error);

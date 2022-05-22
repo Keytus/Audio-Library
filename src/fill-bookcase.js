@@ -105,6 +105,7 @@ export async function addAudioItem(doc) {
         if (!isDelete) {
             startPlayer(doc);
         }
+        isDelete = false;
     })
 
     let audioNameElem = document.createElement("marquee");
