@@ -1,15 +1,26 @@
+import {
+    btnLoginForm,
+    btnSignupForm,
+    btnAuthMobile,
+    btnNavPanel,
+    btnAddTrack,
+    btnAuthMobileLogin,
+    btnAuthMobileSignUp,
+    page
+} from './ui.js'
+
 let currentForm = null;
 let isOpen = false;
 let canClose = false;
 
-function openForm(formName) {
+export function openForm(formName) {
     closeCurrentForm()
     document.getElementById(formName).style.display = "flex";
     currentForm = formName;
     isOpen = true;
 }
 
-function closeFrom(formName) {
+export function closeFrom(formName) {
     document.getElementById(formName).style.display = "none";
     currentForm = null;
     isOpen = false
@@ -28,3 +39,27 @@ function closeCurrentForm() {
         }
     }
 }
+
+page.addEventListener("click", closeCurrentForm);
+btnLoginForm.addEventListener("click", function () {
+    openForm('loginForm');
+});
+btnSignupForm.addEventListener("click", function () {
+    openForm('signUpForm');
+});
+btnAuthMobile.addEventListener("click", function () {
+    openForm('loginSignUpForm');
+});
+btnNavPanel.addEventListener("click", function () {
+    openForm('navPanel');
+});
+btnAddTrack.addEventListener("click", function () {
+    closeFrom('addForm');
+});
+btnAuthMobileLogin.addEventListener("click", function () {
+    openForm('loginForm');
+});
+btnAuthMobileSignUp.addEventListener("click", function () {
+    openForm('signUpForm');
+});
+

@@ -32,12 +32,10 @@
 
 .player-form__play-button{
     width: 45px;
-    height: 38px;
+    height: 40px;
 }
   
 .player-form__play-button_standard{
-    width: 48px;
-    height: 35px;
     background: none;
 	color: inherit;
 	border: none;
@@ -46,4 +44,23 @@
 	cursor: pointer;
 	outline: inherit;
     background-image: url(../../../../static/play.png);
+}
+
+.player-form__dowload-button{
+    position: absolute;
+    top: calc(100% / 2 - 240px);
+    left: calc(100% / 2 + 240px);
+    width: 48px;
+    height: 48px;
+}
+
+.player-form__dowload-button_standard{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    background-image: url(../../../../static/Dowload\ button.png);
 }

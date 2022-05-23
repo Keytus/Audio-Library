@@ -11,10 +11,13 @@ import {
 // Initialize Cloud Firestore and get a reference to the service
 export const db = getFirestore(app);
 
-export const genresQuery = await getDocs(collection(db, "Genres"));
+export let genresQuery = await getDocs(collection(db, "Genres"));
 
 export let tracksQuery = await getDocs(collection(db, "Tracks"));
 
 export async function updateTracksQuery(){
     tracksQuery = await getDocs(collection(db, "Tracks"));
+}
+export async function updateGenresQuery(){
+    genresQuery = await getDocs(collection(db, "Genres"));
 }

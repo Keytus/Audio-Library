@@ -1,7 +1,7 @@
 .bookcase{
     display: flex;
     background-image: url("../../../../static/Bookcase.png");
-    width: 800px;
+    height: 800px;
     max-width: 1200px;
     flex-basis: 1200px;
     flex-shrink: 0;

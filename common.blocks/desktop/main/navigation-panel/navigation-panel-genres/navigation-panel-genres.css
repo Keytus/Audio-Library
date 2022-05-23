@@ -1,15 +1,17 @@
 .navigation-panel-genres{
-    min-width: 235px;
+    min-width: 240px;
     width: inherit;
     min-height: 740px;
     background-color: #C4C4C4;
     list-style : inside;
     margin: 0;
-    padding-left: 5px;
+    list-style-type: none;
+    padding: 0;
 }
 
 .navigation-panel-genres__item{
-    margin-left: 5px;
+    cursor: pointer;
+    padding: 5px;
 }
 
 .navigation-panel-genres__item_font{

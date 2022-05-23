@@ -6,45 +6,63 @@ import {
     btnLogoutMobile
 } from './ui.js'
 
-let lastWidth = window.innerWidth
+import {
+    auth
+} from './auth.js'
+
+export const mobileMaxWidth = 360;
 
 window.addEventListener('resize', function () {
-    if (window.innerWidth > 361 && lastWidth < 361) {
-        lastWidth = window.innerWidth
-        changeBtnDisplay()
-    }
-    else if (window.innerWidth < 361 && lastWidth > 361) {
-        lastWidth = window.innerWidth
-        changeBtnDisplay()
-    }
+    setBtnDisplay();
 }, true);
 
-function changeBtnDisplay(){
-    if (lastWidth > 361) {
-        if (btnLogoutMobile.style.display === 'block') {
-            btnLogout.style.display = "inline-block"
-            btnLoginForm.style.display = "none"
-            btnSignupForm.style.display = "none"
+export function setBtnDisplay(){
+    if (auth.currentUser != null){
+        if (window.innerWidth > mobileMaxWidth){
+            desktopBtnLogin();
         }
-        else {
-            btnLogout.style.display = "none"
-            btnLoginForm.style.display = "inline-block"
-            btnSignupForm.style.display = "inline-block"
+        else{
+            modileBtnLogin();
         }
-        btnAuthMobile.style.display = "none"
-        btnLogoutMobile.style.display = "none"
     }
-    else {
-        if (btnLogout.style.display === 'inline-block') {
-            btnLogoutMobile.style.display = "block"
-            btnAuthMobile.style.display = "none"
+    else{
+        if (window.innerWidth > mobileMaxWidth){
+            desktopBtnLogout();
         }
-        else {
-            btnLogoutMobile.style.display = "none"
-            btnAuthMobile.style.display = "block"
+        else{
+            modileBtnLogout();
         }
-        btnLoginForm.style.display = "none"
-        btnSignupForm.style.display = "none"
-        btnLogout.style.display = "none"
     }
+}
+
+function desktopBtnLogin(){
+    btnLogout.style.display = "inline-block";
+    btnLoginForm.style.display = "none";
+    btnSignupForm.style.display = "none";
+    btnAuthMobile.style.display = "none";
+    btnLogoutMobile.style.display = "none";
+}
+
+function desktopBtnLogout(){
+    btnLogout.style.display = "none";
+    btnLoginForm.style.display = "inline-block";
+    btnSignupForm.style.display = "inline-block";
+    btnAuthMobile.style.display = "none";
+    btnLogoutMobile.style.display = "none";
+}
+
+function modileBtnLogin(){
+    btnLogoutMobile.style.display = "block";
+    btnAuthMobile.style.display = "none";
+    btnLoginForm.style.display = "none";
+    btnSignupForm.style.display = "none";
+    btnLogout.style.display = "none";
+}
+
+function modileBtnLogout(){
+    btnLogoutMobile.style.display = "none";
+    btnAuthMobile.style.display = "block";
+    btnLoginForm.style.display = "none";
+    btnSignupForm.style.display = "none";
+    btnLogout.style.display = "none";
 }
